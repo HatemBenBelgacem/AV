@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AV
 build_property.RootNamespace = AV
@@ -17,6 +25,70 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/hatem/Projekte/AV
 build_property._RazorSourceGeneratorDebug = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL0hvbWUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL0hvbWUvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL1NoYXJlZC9FcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL1NoYXJlZC9fVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL19WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL19WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Adresse/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRyZXNzZS9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Adresse/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRyZXNzZS9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Adresse/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRyZXNzZS9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Adresse/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRyZXNzZS9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Adresse/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRyZXNzZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Auftrag/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXVmdHJhZy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Auftrag/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXVmdHJhZy9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Auftrag/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXVmdHJhZy9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Auftrag/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXVmdHJhZy9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/Views/Auftrag/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXVmdHJhZy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/hatem/Projekte/AV/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
@@ -41,6 +113,10 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/hatem/Projekte/AV/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hatem/Projekte/AV/AV2/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL1NoYXJlZC9fTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-8kkbs3xvob
 
 [/Users/hatem/Projekte/AV/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
