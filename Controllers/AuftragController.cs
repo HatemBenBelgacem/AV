@@ -20,7 +20,7 @@ namespace AV.Controllers
         }
 
         // GET: Auftrag
-        public IActionResult Index(int id)
+        public IActionResult Index()
         {
             //return View(await _context.Auftraege.ToListAsync());
             var auftrag = _context.Auftraege
@@ -84,6 +84,9 @@ namespace AV.Controllers
                 return NotFound();
             }
 
+            var adressen = _context.Adressen.ToList();
+            ViewBag.Adressen = new SelectList(adressen, "Id", "Name");
+
             var auftrag = await _context.Auftraege.FindAsync(id);
             if (auftrag == null)
             {
@@ -97,7 +100,7 @@ namespace AV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Beschreibung")] Auftrag auftrag)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Beschreibung,AdresseId")] Auftrag auftrag)
         {
             if (id != auftrag.Id)
             {

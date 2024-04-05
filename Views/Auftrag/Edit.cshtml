@@ -18,6 +18,11 @@
                 <input asp-for="Beschreibung" class="form-control" />
                 <span asp-validation-for="Beschreibung" class="text-danger"></span>
             </div>
+             <div class="form-group">
+                <label asp-for="AdresseId" class="control-label">Adresse wählen</label>
+                <select asp-for="AdresseId" class="form-control" asp-items="@ViewBag.Adressen"></select>
+                <span asp-validation-for="AdresseId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
