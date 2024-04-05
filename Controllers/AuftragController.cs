@@ -20,9 +20,18 @@ namespace AV.Controllers
         }
 
         // GET: Auftrag
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int id)
         {
-            return View(await _context.Auftraege.ToListAsync());
+            //return View(await _context.Auftraege.ToListAsync());
+            var auftrag = _context.Auftraege
+                        .Include(a => a.Adresse);
+                        
+            if(auftrag == null)
+            {
+                return NotFound();
+            }
+            
+            return View(auftrag);
         }
 
         // GET: Auftrag/Details/5
