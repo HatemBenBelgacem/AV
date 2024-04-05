@@ -88,7 +88,7 @@ namespace AV.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Beschreibung,AdresseId")] Auftrag auftrag)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Beschreibung")] Auftrag auftrag)
         {
             if (id != auftrag.Id)
             {

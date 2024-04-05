@@ -26,30 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/hatem/Projekte/AV
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/hatem/Projekte/AV/AV2/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL0hvbWUvSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/hatem/Projekte/AV/AV2/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL0hvbWUvUHJpdmFjeS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/hatem/Projekte/AV/AV2/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL1NoYXJlZC9FcnJvci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/hatem/Projekte/AV/AV2/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL1NoYXJlZC9fVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/hatem/Projekte/AV/AV2/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL19WaWV3SW1wb3J0cy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/hatem/Projekte/AV/AV2/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL19WaWV3U3RhcnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/hatem/Projekte/AV/Views/Adresse/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRyZXNzZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -113,10 +89,6 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/hatem/Projekte/AV/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/hatem/Projekte/AV/AV2/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QVYyL1ZpZXdzL1NoYXJlZC9fTGF5b3V0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = b-8kkbs3xvob
 
 [/Users/hatem/Projekte/AV/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
