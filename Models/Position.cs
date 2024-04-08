@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AV.Models;
 
-public class Adresse
+public class Position
 {
     public int Id { get; set; }
-    public string? Name { get; set; }
-    public ICollection<Auftrag>? Auftrag { get; set; }
-    public ICollection<Produkt>? Produkt { get; set; }
+    public int AuftragId { get; set; }
+    public Auftrag? Auftrag { get; set; }
+    public int ProduktId { get; set; }
+    public Produkt? Produkt { get; set; }
 }
