@@ -96,27 +96,6 @@ namespace AV.Controllers
             return View(auftrag);
         }
 
-        public async Task<IActionResult> AssignProdukt(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var produkt = _context.Positionen
-                .Include(p => p.Produkt)
-                .ToList();
-            ViewBag.Produkte = new SelectList(produkt, "Id", "Bezeichnung");
-            
-            var auftrag = await _context.Auftraege
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (auftrag == null)
-            {
-                return NotFound();
-            }
-
-            return View(auftrag);
-        }
 
         // POST: Auftrag/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
