@@ -47,12 +47,10 @@ namespace AV.Controllers
         }
 
         // GET: Position/Create
-        public IActionResult Create(int orderId)
+        public IActionResult Create(int? id)
         {
-            ViewData["AuftragId"] = _context.Auftraege.Find(orderId);
-            //ViewData["AuftragId"] = new SelectList(_context.Auftraege, "Id", "Beschreibung");
-            //var auftrag = _context.Auftraege.Find(orderId);
-            //ViewData["AuftragId"] = orderId;
+            //var auftrag = await _context.Auftraege.FindAsync(id);
+            ViewData["AuftragId"] = new SelectList(_context.Auftraege, "Id", "Beschreibung");
 
             ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Bezeichnung");
             return View();
