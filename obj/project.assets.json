@@ -8160,11 +8160,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dev_Projekte\\AV\\AV.csproj",
+      "projectUniqueName": "D:\\dev_Projekte\\AV-1\\AV.csproj",
       "projectName": "AV",
-      "projectPath": "D:\\dev_Projekte\\AV\\AV.csproj",
+      "projectPath": "D:\\dev_Projekte\\AV-1\\AV.csproj",
       "packagesPath": "C:\\Users\\hbe\\.nuget\\packages\\",
-      "outputPath": "D:\\dev_Projekte\\AV\\obj\\",
+      "outputPath": "D:\\dev_Projekte\\AV-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hbe\\AppData\\Roaming\\NuGet\\NuGet.Config"
