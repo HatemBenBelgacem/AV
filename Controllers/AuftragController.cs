@@ -56,10 +56,16 @@ namespace AV.Controllers
         {
             var auftrag = await _context.Auftraege
                 .Include(p => p.Position)
+                .ThenInclude(pr => pr.Produkt)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Bezeichnung");
-            return View(auftrag);
+            var alleProdukte = await _context.Produkte.ToListAsync();
+
+            var auftragProduktIds = auftrag.Position.Select(ap => ap.ProduktId).ToList();
+
+            ViewData["ProduktId"] = new SelectList(alleProdukte, "Id", "Bezeichnung", auftragProduktIds);
+           
+           return View(auftrag);
         }
 
 

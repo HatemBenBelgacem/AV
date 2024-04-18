@@ -1,7 +1,7 @@
 @model AV.Models.Auftrag
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "CreateOrder";
 }
 
 <h1>Create</h1>
@@ -18,9 +18,8 @@
                 <span asp-validation-for="Beschreibung" class="text-danger"></span>
             </div>
              <div class="form-group">
-                <label asp-for="Position" class="control-label">Adresse wählen</label>
-                <select asp-for="Position" class="form-control" asp-items="@ViewBag.Produkt"></select>
-                <span asp-validation-for="AdresseId" class="text-danger"></span>
+                <label asp-for="Position" class="control-label">Produkt wählen</label>
+                <select asp-for="Position" class="form-control" asp-items="ViewBag.ProduktId"></select>
             </div>
          
             <div class="form-group">
