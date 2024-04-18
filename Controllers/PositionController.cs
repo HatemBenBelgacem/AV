@@ -51,14 +51,10 @@ namespace AV.Controllers
         {
             var position = await _context.Positionen
                     .Include(a => a.Auftrag)
+                    .Include(p => p.Produkt)
                     .FirstOrDefaultAsync(m => m.Id == id);
-            if (position == null)
-            {
-                return NotFound();
-            }
-            //ViewData["AuftragId"] = new SelectList(_context.Auftraege, "Id", "Beschreibung");
 
-            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Bezeichnung");
+            //ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Bezeichnung");
             return View(position);
         }
 

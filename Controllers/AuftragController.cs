@@ -52,6 +52,16 @@ namespace AV.Controllers
 
             return View(auftrag);
         }
+        public async Task<IActionResult> CreateOrder(int? id)
+        {
+            var auftrag = await _context.Auftraege
+                .Include(p => p.Position)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Bezeichnung");
+            return View(auftrag);
+        }
+
 
         // GET: Auftrag/Create
         public IActionResult Create()

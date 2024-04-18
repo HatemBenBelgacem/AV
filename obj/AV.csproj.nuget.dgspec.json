@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dev_Projekte\\AV-1\\AV.csproj": {}
+    "D:\\dev_Projekte\\AV\\AV.csproj": {}
   },
   "projects": {
-    "D:\\dev_Projekte\\AV-1\\AV.csproj": {
+    "D:\\dev_Projekte\\AV\\AV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dev_Projekte\\AV-1\\AV.csproj",
+        "projectUniqueName": "D:\\dev_Projekte\\AV\\AV.csproj",
         "projectName": "AV",
-        "projectPath": "D:\\dev_Projekte\\AV-1\\AV.csproj",
+        "projectPath": "D:\\dev_Projekte\\AV\\AV.csproj",
         "packagesPath": "C:\\Users\\hbe\\.nuget\\packages\\",
-        "outputPath": "D:\\dev_Projekte\\AV-1\\obj\\",
+        "outputPath": "D:\\dev_Projekte\\AV\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hbe\\AppData\\Roaming\\NuGet\\NuGet.Config"
