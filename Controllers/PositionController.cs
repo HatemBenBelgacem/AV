@@ -70,7 +70,7 @@ namespace AV.Controllers
             }
             ViewData["AuftragId"] = new SelectList(_context.Auftraege, "Id", "Id", position.AuftragId);
             ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Id", position.ProduktId);
-            return View(position);
+            return View();
         }
 
         // GET: Position/Edit/5

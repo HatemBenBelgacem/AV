@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="SaveOrder">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Beschreibung" class="control-label"></label>
@@ -19,11 +19,11 @@
             </div>
              <div class="form-group">
                 <label asp-for="Position" class="control-label">Produkt wählen</label>
-                <select asp-for="Position" class="form-control" asp-items="ViewBag.ProduktId"></select>
+                <select  class="form-control" asp-items="ViewBag.ProduktId"></select>
             </div>
          
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-outline-secondary" />
+                <input type="submit" value="SaveOrder" class="btn btn-outline-secondary" />
             </div>
         </form>
     </div>

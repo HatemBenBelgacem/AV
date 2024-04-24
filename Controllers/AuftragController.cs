@@ -67,7 +67,19 @@ namespace AV.Controllers
            
            return View(auftrag);
         }
+        public async Task<IActionResult> SaveOrder([Bind("Id,AuftragId,ProduktId")] Position position)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(position);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
 
+            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Id", position.ProduktId);
+            ViewData["AuftragId"] = new SelectList(_context.Auftraege, "Id", "Id", position.AuftragId);
+            return View(position);
+        }
 
         // GET: Auftrag/Create
         public IActionResult Create()
