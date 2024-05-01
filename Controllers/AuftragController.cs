@@ -56,17 +56,15 @@ namespace AV.Controllers
         {
             var auftrag = await _context.Auftraege
                 .Include(p => p.Position)
-                .ThenInclude(pr => pr.Produkt)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             var alleProdukte = await _context.Produkte.ToListAsync();
-
             var auftragProduktIds = auftrag.Position.Select(ap => ap.ProduktId).ToList();
-
             ViewData["ProduktId"] = new SelectList(alleProdukte, "Id", "Bezeichnung", auftragProduktIds);
            
            return View(auftrag);
         }
+
         public async Task<IActionResult> SaveOrder([Bind("Id,AuftragId,ProduktId")] Position position)
         {
             if (ModelState.IsValid)
@@ -77,7 +75,7 @@ namespace AV.Controllers
             }
 
             ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Id", position.ProduktId);
-            ViewData["AuftragId"] = new SelectList(_context.Auftraege, "Id", "Id", position.AuftragId);
+            
             return View(position);
         }
 

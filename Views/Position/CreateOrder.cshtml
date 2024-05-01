@@ -5,24 +5,16 @@
 }
 
 <h1>Create</h1>
-<div>
-    <h4>Auftrag</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Auftrag.Beschreibung)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Auftrag.Beschreibung)
-        </dd>
-    </dl>
-</div>
 <h4>Position</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Auftrag" class="control-label"></label>
+                <select asp-for="AuftragId" class="form-control" asp-items="ViewBag.AuftragId"></select>
+            </div>
             <div class="form-group">
                 <label asp-for="Produkt" class="control-label"></label>
                 <select asp-for="ProduktId" class="form-control" asp-items="ViewBag.ProduktId"></select>
