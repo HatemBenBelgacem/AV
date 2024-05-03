@@ -5,30 +5,40 @@
 }
 
 <h1>Create</h1>
-
-<h4>Auftrag</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="SaveOrder">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Beschreibung" class="control-label"></label>
-                <input asp-for="Beschreibung" class="form-control" />
-                <span asp-validation-for="Beschreibung" class="text-danger"></span>
-            </div>
-             <div class="form-group">
-                <label asp-for="Position" class="control-label">Produkt wählen</label>
-                <select asp-for="Position"  class="form-control" asp-items="ViewBag.ProduktId"></select>
-            </div>
-         
-            <div class="form-group">
-                <input type="submit" value="SaveOrder" class="btn btn-outline-secondary" />
-            </div>
-        </form>
-    </div>
+<h2>Auftrag Details</h2>
+<div>
+    <p>@Model.Beschreibung</p>
+    <!-- Weitere Details des Auftrags anzeigen -->
 </div>
+<h3>Positionen</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Produkt</th>
+            <!-- Weitere Spaltenüberschriften -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var position in Model.Position)
+        {
+            <tr>
+                <td>@position.Produkt.Bezeichnung</td>
+                <!-- Weitere Daten der Position anzeigen -->
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
 
+<h3>Produkt auswählen</h3>
+@using (Html.BeginForm("SaveOrder", "Auftrag", FormMethod.Post))
+{
+    <div>
+        @Html.DropDownList("ProductId", ViewBag.Produkte as SelectList, "Wählen Sie ein Produkt aus")
+        <input type="submit" value="Produkt hinzufügen" />
+    </div>
+}
 <div>
     <a asp-action="Index"><button type="button" class="btn btn-outline-secondary">Zurück zur Liste</button></a>
 </div>

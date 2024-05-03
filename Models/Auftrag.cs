@@ -9,8 +9,8 @@ public class Auftrag
 {
     public int Id { get; set; }
     public string? Beschreibung { get; set; }
-    public int AdresseId { get; set; }
+    public int? AdresseId { get; set; }
     public Adresse? Adresse { get; set; }
-    public ICollection<Position>? Position { get; set; }
+    public ICollection<Position> Position { get; set; }
   
 }

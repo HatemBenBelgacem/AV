@@ -56,27 +56,45 @@ namespace AV.Controllers
         {
             var auftrag = await _context.Auftraege
                 .Include(p => p.Position)
+                .ThenInclude(i => i.Produkt)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            var alleProdukte = await _context.Produkte.ToListAsync();
-            var auftragProduktIds = auftrag.Position.Select(ap => ap.ProduktId).ToList();
-            ViewData["ProduktId"] = new SelectList(alleProdukte, "Id", "Bezeichnung", auftragProduktIds);
+            var produkte = _context.Produkte
+                .ToList();
+            ViewBag.Produkte = new SelectList(produkte, "Id", "Bezeichnung");
            
            return View(auftrag);
         }
 
-        public async Task<IActionResult> SaveOrder([Bind("Id,AuftragId,ProduktId")] Position position)
+        public async Task<IActionResult> SaveOrder(int orderId, int productId)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(position);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+             var auftrag = await _context.Auftraege
+            .Include(p => p.Position)
+            .FirstOrDefaultAsync(m => m.Id == orderId);
 
-            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Id", position.ProduktId);
+        if (auftrag == null)
+        {
+            return NotFound();
+        }
+
+        var produkt = await _context.Produkte.FindAsync(productId);
+        if (produkt == null)
+        {
+            return NotFound();
+        }
+
+            // Erstellen Sie eine neue Position mit dem ausgewählten Produkt
+            var neuePosition = new Position { Produkt = produkt };
+
+            // Fügen Sie die neue Position dem Auftrag hinzu
+            auftrag.Position.Add(neuePosition);
+
+            // Speichern Sie die Änderungen in der Datenbank
+            await _context.SaveChangesAsync();
+
+            // Umleitung zur Detailsansicht des Auftrags oder einer anderen geeigneten Seite
+            return RedirectToAction("Details", "Auftrag", new { id = orderId });
             
-            return View(position);
         }
 
         // GET: Auftrag/Create

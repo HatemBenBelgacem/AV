@@ -9,6 +9,6 @@ public class Produkt
 {
     public int Id { get; set; }
     public string? Bezeichnung { get; set; }
-    public ICollection<Position>? Position { get; set; }
+    public ICollection<Position> Position { get; set; }
 
 }
