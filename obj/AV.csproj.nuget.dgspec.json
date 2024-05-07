@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dev_Projekte\\AV\\AV.csproj": {}
+    "/Users/hatem/Projekte/AV/AV.csproj": {}
   },
   "projects": {
-    "D:\\dev_Projekte\\AV\\AV.csproj": {
+    "/Users/hatem/Projekte/AV/AV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dev_Projekte\\AV\\AV.csproj",
+        "projectUniqueName": "/Users/hatem/Projekte/AV/AV.csproj",
         "projectName": "AV",
-        "projectPath": "D:\\dev_Projekte\\AV\\AV.csproj",
-        "packagesPath": "C:\\Users\\hbe\\.nuget\\packages\\",
-        "outputPath": "D:\\dev_Projekte\\AV\\obj\\",
+        "projectPath": "/Users/hatem/Projekte/AV/AV.csproj",
+        "packagesPath": "/Users/hatem/.nuget/packages/",
+        "outputPath": "/Users/hatem/Projekte/AV/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hbe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/hatem/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

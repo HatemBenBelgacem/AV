@@ -3,11 +3,4 @@
 
 // Write your JavaScript code.
 
-const tableElement = document.querySelectorAll('[id=data]');
 
-
-tableElement.forEach(element => {
-    element.addEventListener('dblclick', () => {
-        console.log('hier steht was');
-    });
-});

@@ -10,22 +10,22 @@ using AV.Models;
 
 namespace AV.Controllers
 {
-    public class ProduktController : Controller
+    public class AufgabeController : Controller
     {
         private readonly AVContext _context;
 
-        public ProduktController(AVContext context)
+        public AufgabeController(AVContext context)
         {
             _context = context;
         }
 
-        // GET: Produkt
+        // GET: Aufgabe
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Produkte.ToListAsync());
+            return View(await _context.Aufgabe.ToListAsync());
         }
 
-        // GET: Produkt/Details/5
+        // GET: Aufgabe/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace AV.Controllers
                 return NotFound();
             }
 
-            var produkt = await _context.Produkte
+            var aufgabe = await _context.Aufgabe
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produkt == null)
+            if (aufgabe == null)
             {
                 return NotFound();
             }
 
-            return View(produkt);
+            return View(aufgabe);
         }
 
-        // GET: Produkt/Create
+        // GET: Aufgabe/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Produkt/Create
+        // POST: Aufgabe/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Bezeichnung")] Produkt produkt)
+        public async Task<IActionResult> Create([Bind("Id,Bezeichnung")] Aufgabe aufgabe)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(produkt);
+                _context.Add(aufgabe);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(produkt);
+            return View(aufgabe);
         }
 
-        // GET: Produkt/Edit/5
+        // GET: Aufgabe/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace AV.Controllers
                 return NotFound();
             }
 
-            var produkt = await _context.Produkte.FindAsync(id);
-            if (produkt == null)
+            var aufgabe = await _context.Aufgabe.FindAsync(id);
+            if (aufgabe == null)
             {
                 return NotFound();
             }
-            return View(produkt);
+            return View(aufgabe);
         }
 
-        // POST: Produkt/Edit/5
+        // POST: Aufgabe/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Bezeichnung")] Produkt produkt)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Bezeichnung")] Aufgabe aufgabe)
         {
-            if (id != produkt.Id)
+            if (id != aufgabe.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace AV.Controllers
             {
                 try
                 {
-                    _context.Update(produkt);
+                    _context.Update(aufgabe);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProduktExists(produkt.Id))
+                    if (!AufgabeExists(aufgabe.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace AV.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(produkt);
+            return View(aufgabe);
         }
 
-        // GET: Produkt/Delete/5
+        // GET: Aufgabe/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,34 +124,34 @@ namespace AV.Controllers
                 return NotFound();
             }
 
-            var produkt = await _context.Produkte
+            var aufgabe = await _context.Aufgabe
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produkt == null)
+            if (aufgabe == null)
             {
                 return NotFound();
             }
 
-            return View(produkt);
+            return View(aufgabe);
         }
 
-        // POST: Produkt/Delete/5
+        // POST: Aufgabe/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var produkt = await _context.Produkte.FindAsync(id);
-            if (produkt != null)
+            var aufgabe = await _context.Aufgabe.FindAsync(id);
+            if (aufgabe != null)
             {
-                _context.Produkte.Remove(produkt);
+                _context.Aufgabe.Remove(aufgabe);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProduktExists(int id)
+        private bool AufgabeExists(int id)
         {
-            return _context.Produkte.Any(e => e.Id == id);
+            return _context.Aufgabe.Any(e => e.Id == id);
         }
     }
 }

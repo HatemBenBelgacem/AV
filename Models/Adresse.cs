@@ -10,5 +10,5 @@ public class Adresse
     public int Id { get; set; }
     public string? Name { get; set; }
     public ICollection<Auftrag>? Auftrag { get; set; }
-    public ICollection<Produkt>? Produkt { get; set; }
+    
 }

@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AV.Data;
 using AV.Models;
-using System.Net.Http.Headers;
 
 namespace AV.Controllers
 {
@@ -21,18 +20,10 @@ namespace AV.Controllers
         }
 
         // GET: Auftrag
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            //return View(await _context.Auftraege.ToListAsync());
-            var auftrag = _context.Auftraege
-                        .Include(a => a.Adresse);
-                        
-            if(auftrag == null)
-            {
-                return NotFound();
-            }
-            
-            return View(auftrag);
+            var aVContext = _context.Auftraege.Include(a => a.Adresse);
+            return View(await aVContext.ToListAsync());
         }
 
         // GET: Auftrag/Details/5
@@ -44,6 +35,7 @@ namespace AV.Controllers
             }
 
             var auftrag = await _context.Auftraege
+                .Include(a => a.Adresse)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (auftrag == null)
             {
@@ -52,58 +44,14 @@ namespace AV.Controllers
 
             return View(auftrag);
         }
-        public async Task<IActionResult> CreateOrder(int? id)
-        {
-            var auftrag = await _context.Auftraege
-                .Include(p => p.Position)
-                .ThenInclude(i => i.Produkt)
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            var produkte = _context.Produkte
-                .ToList();
-            ViewBag.Produkte = new SelectList(produkte, "Id", "Bezeichnung");
-           
-           return View(auftrag);
-        }
-
-        public async Task<IActionResult> SaveOrder(int orderId, int productId)
-        {
-             var auftrag = await _context.Auftraege
-            .Include(p => p.Position)
-            .FirstOrDefaultAsync(m => m.Id == orderId);
-
-        if (auftrag == null)
-        {
-            return NotFound();
-        }
-
-        var produkt = await _context.Produkte.FindAsync(productId);
-        if (produkt == null)
-        {
-            return NotFound();
-        }
-
-            // Erstellen Sie eine neue Position mit dem ausgewählten Produkt
-            var neuePosition = new Position { Produkt = produkt };
-
-            // Fügen Sie die neue Position dem Auftrag hinzu
-            auftrag.Position.Add(neuePosition);
-
-            // Speichern Sie die Änderungen in der Datenbank
-            await _context.SaveChangesAsync();
-
-            // Umleitung zur Detailsansicht des Auftrags oder einer anderen geeigneten Seite
-            return RedirectToAction("Details", "Auftrag", new { id = orderId });
-            
-        }
 
         // GET: Auftrag/Create
         public IActionResult Create()
         {
-            var adressen = _context.Adressen.ToList();
-            ViewBag.Adressen = new SelectList(adressen, "Id", "Name");
+            ViewData["AdresseId"] = new SelectList(_context.Adressen, "Id", "Id");
             return View();
         }
+
         // POST: Auftrag/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -111,13 +59,13 @@ namespace AV.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Beschreibung,AdresseId")] Auftrag auftrag)
         {
-           
             if (ModelState.IsValid)
             {
-                 _context.Add(auftrag);
+                _context.Add(auftrag);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AdresseId"] = new SelectList(_context.Adressen, "Id", "Id", auftrag.AdresseId);
             return View(auftrag);
         }
 
@@ -129,17 +77,14 @@ namespace AV.Controllers
                 return NotFound();
             }
 
-            var adressen = _context.Adressen.ToList();
-            ViewBag.Adressen = new SelectList(adressen, "Id", "Name");
-
             var auftrag = await _context.Auftraege.FindAsync(id);
             if (auftrag == null)
             {
                 return NotFound();
             }
+            ViewData["AdresseId"] = new SelectList(_context.Adressen, "Id", "Id", auftrag.AdresseId);
             return View(auftrag);
         }
-
 
         // POST: Auftrag/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -173,6 +118,7 @@ namespace AV.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AdresseId"] = new SelectList(_context.Adressen, "Id", "Id", auftrag.AdresseId);
             return View(auftrag);
         }
 
@@ -185,6 +131,7 @@ namespace AV.Controllers
             }
 
             var auftrag = await _context.Auftraege
+                .Include(a => a.Adresse)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (auftrag == null)
             {

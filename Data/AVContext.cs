@@ -19,22 +19,9 @@ namespace AV.Data
         public DbSet<Adresse> Adressen { get; set; } = default!;
         public DbSet<Produkt> Produkte { get; set; } = default!;
         public DbSet<AV.Models.Position> Positionen { get; set; } = default!;
+        public DbSet<Aufgabe> Aufgabe { get; set; } = default!;
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<AV.Models.Position>()
-                .HasKey(ap => new {ap.AuftragId, ap.ProduktId});
-
-            modelBuilder.Entity<AV.Models.Position>()
-                .HasOne(ap => ap.Auftrag)
-                .WithMany(a => a.Position)
-                .HasForeignKey(ap => ap.AuftragId);
-
-             modelBuilder.Entity<AV.Models.Position>()
-                .HasOne(ap => ap.Produkt)
-                .WithMany(a => a.Position)
-                .HasForeignKey(ap => ap.ProduktId);
-        }
+   
 
     }
 }
